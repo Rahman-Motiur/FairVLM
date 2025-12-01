@@ -12,9 +12,7 @@ from tqdm import tqdm
 from src.models.fairvlm import FairVLM
 
 
-# =========================
-# Dataset
-# =========================
+
 
 class FairSegDataset(Dataset):
     """
@@ -82,9 +80,7 @@ class FairSegDataset(Dataset):
         return img, mask, prompt, demo
 
 
-# =========================
-# Backbone Builder (SAMed / LViT wrappers)
-# =========================
+
 
 def build_backbone(backbone_name: str):
     """
@@ -108,9 +104,7 @@ def build_backbone(backbone_name: str):
         raise ValueError(f"Unknown backbone: {backbone_name}")
 
 
-# =========================
-# Metrics
-# =========================
+
 
 def dice_iou(pred_logits, gt):
     """
@@ -132,9 +126,7 @@ def dice_iou(pred_logits, gt):
     return dice.mean().item(), iou.mean().item()
 
 
-# =========================
-# Training Loop
-# =========================
+
 
 def train_one_epoch(
     model,
@@ -221,9 +213,7 @@ def validate(model, dataloader, device, epoch):
     )
 
 
-# =========================
-# Main
-# =========================
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train FairVLM")
