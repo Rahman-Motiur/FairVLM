@@ -78,9 +78,46 @@ Demographics: sex, race, ethnicity, language
 ---
 
 ## Installation
-````bash
-git clone https://github.com/Rahman-Motiur/FairVLM.git
-cd FairVLM
-pip install -r requirements.txt
+
+    git clone https://github.com/Rahman-Motiur/FairVLM.git
+    cd FairVLM
+    pip install -r requirements.txt
+
+---
+
+## Training and Testing
+
+    python train_fairvlm.py --dataset harvard_fairseg --backbone samed --use_srcp --use_dafn --use_fcl
+
+    python evaluate.py --model checkpoints/fairvlm_best.pth
+
+---
+
+## Repository Structure
+
+    FairVLM/
+    │── src/
+    │   ├── models/
+    │   ├── modules/
+    │   │   ├── srcp.py
+    │   │   ├── dafn.py
+    │   │   └── fcl.py
+    │   ├── train_fairvlm.py
+    │── data/
+    │── docs/
+    │── notebooks/
+    │── README.md
+
+---
+
+## Citation
+
+    @article{rahman2025fairvlm,
+    title={FairVLM: Enhancing Fairness and Prompt Sensitivity in Vision--Language Models for Medical Image Segmentation},
+    author={Rahman, Md Motiur and Rahman, Saeka and Bhatt, Smriti and Faezipour, Miad},
+    year={2025},
+    journal={arXiv preprint}
+    }
+
 
 
