@@ -8,10 +8,6 @@ from src.modules.fcl import FairnessCalibratedLoss
 
 
 class FairVLM(nn.Module):
-    """
-    FairVLM: Fairness + Prompt-Invariant Vision-Language Segmentation Model.
-    Implements SRCP, DAFN, and FCL on top of a backbone VLM (e.g., SAMed, LViT).
-    """
 
     def __init__(self, backbone, use_srcp=True, use_dafn=True, use_fcl=True):
         super().__init__()
@@ -31,12 +27,7 @@ class FairVLM(nn.Module):
             self.fcl = FairnessCalibratedLoss()
 
     def forward(self, image, prompt, demographic, mask_gt=None):
-        """
-        image          : BxCxHxW image tensor
-        prompt         : list of prompt strings
-        demographic    : BxK multi-hot demographic vectors (sex, race, ethnicity, language)
-        mask_gt        : ground-truth for segmentation (optional)
-        """
+
 
         # 1. SRCP – multiple prompt variations (k=3 selected)
         if self.use_srcp:
@@ -63,3 +54,4 @@ class FairVLM(nn.Module):
             return pred_mask, loss
 
         return pred_mask
+
