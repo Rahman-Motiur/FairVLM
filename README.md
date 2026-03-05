@@ -116,7 +116,7 @@ Demographics: sex, race, ethnicity, language
     title={FairVLM: Enhancing Fairness and Prompt Sensitivity in Vision--Language Models for Medical Image Segmentation},
     author={Rahman, Md Motiur and Rahman, Saeka and Bhatt, Smriti and Faezipour, Miad},
     year={2025},
-    journal={arXiv preprint}
+    journal={The IEEE/CVF Winter Conference on Applications of Computer Vision 2026}
     }
 
 
